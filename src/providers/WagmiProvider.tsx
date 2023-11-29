@@ -21,14 +21,19 @@ const WagmiProvider = ({ children }: { children: React.ReactNode }) => {
   );
 
   const particle = useMemo(() => {
-    new ParticleNetwork({
-      projectId: "5cb4fb13-1396-4e8f-b524-9e062f81245d",
-      clientKey: "c6qP1SPPdvxqI4EKLSJPpPJfj8RacOmVDZ0SFQYB",
-      appId: "e808e5ef-caa5-4847-8dc6-7b416ecfaf42",
-      chainName: "Ethereum",
-      chainId: 1,
-      wallet: { displayWalletEntry: false },
-    });
+    try {
+      console.log("Its working");
+      new ParticleNetwork({
+        projectId: "5cb4fb13-1396-4e8f-b524-9e062f81245d",
+        clientKey: "c6qP1SPPdvxqI4EKLSJPpPJfj8RacOmVDZ0SFQYB",
+        appId: "e808e5ef-caa5-4847-8dc6-7b416ecfaf42",
+        chainName: "Ethereum",
+        chainId: 1,
+        wallet: { displayWalletEntry: false },
+      });
+    } catch (e) {
+      console.log(e);
+    }
   }, []);
 
   //const supportedWallets = useMemo(
