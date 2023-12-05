@@ -1,3 +1,5 @@
+import { WalletButton } from "@/src/WalletButton";
+
 export default function Home() {
-  return <></>;
+  return <WalletButton />;
 }
